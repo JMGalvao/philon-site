@@ -114,34 +114,6 @@ faqAccordion.forEach(function (btn) {
     })
 })
 
-
-
-const contactFormModal = document.getElementById('contact-form-modal');
-const contactBtns = document.querySelectorAll('.contact-btn');
-const getStartedBtns = document.querySelectorAll('.get-started-btn');
-const closeFormBtn = document.getElementById('close-form-btn');
-
-contactBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        contactFormModal.classList.remove('tw-hidden');
-    });
-});
-
-getStartedBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        contactFormModal.classList.remove('tw-hidden');
-    });
-});
-
-closeFormBtn.addEventListener('click', () => {
-    contactFormModal.classList.add('tw-hidden');
-});
-
-contactFormModal.addEventListener('click', (e) => {
-    if (e.target === contactFormModal) {
-        contactFormModal.classList.add('tw-hidden');
-    }
-});
 // ------------- reveal section animations ---------------
 
 const sections = gsap.utils.toArray("section")
