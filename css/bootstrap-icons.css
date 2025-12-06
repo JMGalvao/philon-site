@@ -1,7 +1,7 @@
 @font-face {
   font-family: "bootstrap-icons";
-  src: url("fonts/bootstrap-icons.woff2") format("woff2"),
-url("fonts/bootstrap-icons.woff") format("woff");
+  src: url("../fonts/bootstrap-icons.woff2") format("woff2"),
+url("../fonts/bootstrap-icons.woff") format("woff");
 }
 
 .bi::before,
@@ -18,3 +18,23 @@ url("fonts/bootstrap-icons.woff") format("woff");
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.bi-123::before { content: "\f67f"; }
+.bi-alarm-fill::before { content: "\f101"; }
+.bi-alarm::before { content: "\f102"; }
+.bi-align-bottom::before { content: "\f103"; }
+.bi-align-center::before { content: "\f104"; }
+.bi-align-end::before { content: "\f105"; }
+.bi-align-middle::before { content: "\f106"; }
+.bi-align-start::before { content: "\f107"; }
+.bi-align-top::before { content: "\f108"; }
+.bi-alt::before { content: "\f109"; }
+.bi-app-indicator::before { content: "\f10a"; }
+.bi-app::before { content: "\f10b"; }
+.bi-archive-fill::before { content: "\f10c"; }
+.bi-archive::before { content: "\f10d"; }
+.bi-arrow-90deg-down::before { content: "\f10e"; }
+.bi-arrow-90deg-left::before { content: "\f10f"; }
+.bi-arrow-90deg-right::before { content: "\f110"; }
+.bi-arrow-90deg-up::before { content: "\f111"; }
+{-truncated-}
