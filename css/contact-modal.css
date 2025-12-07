@@ -1,0 +1,104 @@
+/* Modal Backdrop (The dark overlay) */
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+}
+
+/* Modal Container */
+dialog.modal-styles {
+  border: none;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  font-family: 'Helvetica', sans-serif; /* or your site's font */
+}
+
+/* Header & Close Button */
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.close-text {
+  background: none;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+dialog h2 {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Input Styles (Underline only) */
+.input-group {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #000;
+}
+
+.input-group input, 
+.input-group textarea {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  font-size: 16px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  border-bottom: 1px solid #000;
+}
+
+/* Footer & Submit Button */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.terms-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.submit-btn {
+  background: white;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.arrow-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 14px;
+}
