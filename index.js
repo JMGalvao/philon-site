@@ -146,7 +146,7 @@ if (navDropdown) {
 
 function toggleNavDropdown(){
 
-    if (navDropdown.getAttribute("data-open") === "true"){
+    if (navDropdown && navDropdown.getAttribute("data-open") === "true"){
         closeNavDropdown()
     }else{
         openNavDropdown()
@@ -159,10 +159,12 @@ function navMouseLeave(){
 
 function openNavDropdown(event){
 
-    navDropdown.classList.add("tw-opacity-100", "tw-scale-100", 
-                            "max-lg:tw-min-h-[450px]", "max-lg:!tw-h-fit", "tw-min-w-[320px]")
-    
-    navDropdown.setAttribute("data-open", true)
+    if (navDropdown) {
+        navDropdown.classList.add("tw-opacity-100", "tw-scale-100", 
+                                "max-lg:tw-min-h-[450px]", "max-lg:!tw-h-fit", "tw-min-w-[320px]")
+        
+        navDropdown.setAttribute("data-open", true)
+    }
 
 }
 
@@ -268,7 +270,7 @@ faqAccordion.forEach(function (btn) {
         let icon = this.querySelector(".bi-plus")
 
         // content.classList.toggle('!tw-hidden')
-        if (content.style.maxHeight === '240px') {
+        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
             content.style.maxHeight = '0px'
             content.style.padding = '0px 18px'
             icon.style.transform = "rotate(0deg)"
