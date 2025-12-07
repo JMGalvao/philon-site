@@ -216,16 +216,19 @@ function closeVideo(){
  * Animations
  */
 
-const typed = new Typed('#prompts-sample', {
-    strings: ["How to solve a rubik's cube? Step by step guide", 
-                "What's Pixa playground?", 
-                "How to build an AI SaaS App?", 
-                "How to integrate Pixa API?"],
-    typeSpeed: 80,
-    smartBackspace: true, 
-    loop: true,
-    backDelay: 2000,
-})
+const typedElement = document.querySelector('#prompts-sample');
+if (typedElement) {
+    const typed = new Typed('#prompts-sample', {
+        strings: ["How to solve a rubik's cube? Step by step guide",
+        "What's Pixa playground?",
+        "How to build an AI SaaS App?",
+        "How to integrate Pixa API?"],
+        typeSpeed: 80,
+        smartBackspace: true,
+        loop: true,
+        backDelay: 2000,
+    })
+}
 
 gsap.registerPlugin(ScrollTrigger)
 
