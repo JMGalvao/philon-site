@@ -48,6 +48,7 @@
                 >
                     <a class="header-links" href=""> About us </a>
                     <a class="header-links" href="#services"> Solutions </a>
+                    <a class="header-links" href="#FAQs"> FAQs </a>
                 </div>
                 <div
                     class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
@@ -400,27 +401,6 @@
             </div>
         </footer>
     </body>
-
-    <!-- Floating modal form -->
-    <div id="modal-backdrop" class="tw-hidden modal-backdrop">
-        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-            <button id="modal-close" class="modal-close" aria-label="Close form">&times;</button>
-            <h3 id="modal-title" class="tw-text-2xl tw-font-semibold tw-mb-3">Let's talk about your project</h3>
-            <form id="lead-form" class="lead-form">
-                <div class="tw-flex tw-flex-col tw-gap-3">
-                    <input name="name" class="input" placeholder="Name" required />
-                    <input name="company" class="input" placeholder="Company" />
-                    <input name="email" type="email" class="input" placeholder="Email" required />
-                    <input name="contact" class="input" placeholder="Contact (phone)" />
-                    <textarea name="message" class="input" placeholder="Tell us about your project" rows="4"></textarea>
-                    <div class="tw-flex tw-justify-end tw-gap-3">
-                        <button type="button" id="modal-cancel" class="btn !tw-bg-transparent !tw-text-white !tw-border-[1px] !tw-border-solid !tw-border-gray-400">Cancel</button>
-                        <button type="submit" class="btn">Submit</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <script
         src="/js/gsap.min.js"
