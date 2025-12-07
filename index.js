@@ -138,3 +138,72 @@ sections.forEach((sec) => {
 
 
 })
+
+
+// Floating modal form handlers
+(function () {
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalClose = document.getElementById('modal-close');
+    const modalCancel = document.getElementById('modal-cancel');
+    const leadForm = document.getElementById('lead-form');
+    const openers = document.querySelectorAll('[data-open-form]');
+
+    if (!modalBackdrop) return;
+
+    function openModal() {
+        modalBackdrop.classList.remove('tw-hidden');
+        modalBackdrop.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        const firstInput = modalBackdrop.querySelector('.lead-form .input');
+        if (firstInput) firstInput.focus();
+    }
+
+    function closeModal() {
+        modalBackdrop.classList.add('tw-hidden');
+        modalBackdrop.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    openers.forEach(el => {
+        el.addEventListener('click', (ev) => {
+            // prevent default (anchors) and open modal
+            ev.preventDefault();
+            openModal();
+        });
+    });
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalCancel) modalCancel.addEventListener('click', closeModal);
+
+    // click on backdrop outside the modal-card closes
+    modalBackdrop.addEventListener('click', (ev) => {
+        if (ev.target === modalBackdrop) closeModal();
+    });
+
+    // simple submit handler — change endpoint as needed
+    if (leadForm) {
+        leadForm.addEventListener('submit', async (ev) => {
+            ev.preventDefault();
+            const data = Object.fromEntries(new FormData(leadForm).entries());
+
+            try {
+                // Replace '/api/leads' with your actual server endpoint, or adapt to a service
+                const res = await fetch('/api/leads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                });
+
+                if (!res.ok) throw new Error('Network response was not ok');
+
+                // success feedback then close
+                alert('Thanks — we received your message!');
+                closeModal();
+                leadForm.reset();
+            } catch (err) {
+                console.error('Lead submit error:', err);
+                alert('There was an error sending the form. Try again later.');
+            }
+        });
+    }
+})();
