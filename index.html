@@ -1681,32 +1681,121 @@
     </section>
 
     <section
-    class="tw-relative tw-flex tw-p-2 tw-w-full tw-min-h-[60vh] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden"
-    >
-    <div
-        class="reveal-up tw-w-full tw-h-full tw-min-h-[450px] max-lg:tw-max-w-full tw-rounded-md lg:tw-py-[5%] tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-place-content-center tw-items-center tw-flex tw-flex-col tw-max-w-[80%] tw-gap-4 tw-p-4"
-    >
-        <h3
-        class="reveal-up tw-text-5xl tw-font-medium max-md:tw-text-3xl tw-text-center tw-leading-normal"
-        >
-        Ready to Architect Your <br />
-        <span class="tw-text-[#ff8c42]">Intelligence Layer?</span>
-        </h3>
-        
-        <p class="tw-text-xl tw-text-center tw-text-gray-600 dark:tw-text-gray-400 tw-max-w-[600px]">
-            Stop experimenting with generic tools. Start building a self-sustaining ecosystem customized for your enterprise.
-        </p>
+  id="contact"
+  class="tw-relative tw-flex tw-w-full tw-min-h-[80vh] tw-flex-col tw-place-content-center tw-place-items-center tw-p-[5%]"
+>
+  <div
+    class="purple-bg-grad reveal-up tw-absolute tw-left-[5%] tw-bottom-[10%] tw-h-[250px] tw-w-[250px] tw-opacity-30"
+  ></div>
 
-        <div class="tw-mt-8 tw-relative tw-flex max-lg:tw-flex-col tw-gap-5">
-        <a
-            href="#"
-            class="btn reveal-up !tw-rounded-full !tw-p-4 tw-font-medium !tw-bg-[#ff8c42] !tw-text-white hover:!tw-bg-[#e07b3a] tw-transition-colors"
+  <div
+    class="reveal-up tw-w-full tw-max-w-[1200px] tw-rounded-3xl tw-overflow-hidden tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-shadow-xl dark:tw-shadow-none tw-flex max-lg:tw-flex-col"
+  >
+    <div
+      class="tw-w-1/2 max-lg:tw-w-full tw-p-12 max-md:tw-p-6 tw-flex tw-flex-col tw-justify-between tw-bg-[#ffffff] dark:tw-bg-[#1a1a1a] tw-border-r dark:tw-border-[#2d2d2d]"
+    >
+      <div>
+        <h3
+          class="tw-text-4xl tw-font-medium tw-leading-tight tw-mb-4"
         >
-            Schedule Technical Audit
-        </a>
+          Let's Engineer Your <br />
+          <span class="tw-text-[#ff8c42]">Solution</span>
+        </h3>
+        <p class="tw-text-gray-600 dark:tw-text-gray-400 tw-text-lg tw-mb-8">
+          Ready to move beyond generic tools? Fill out the intake form to schedule a technical audit with a senior systems architect.
+        </p>
+        
+        <div class="tw-flex tw-flex-col tw-gap-6">
+            <div class="tw-flex tw-items-start tw-gap-4">
+                <div class="tw-p-3 tw-rounded-lg tw-bg-[#f2f3f4] dark:tw-bg-[#262626] tw-text-[#ff8c42]">
+                    <i class="bi bi-geo-alt-fill tw-text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="tw-font-medium tw-text-lg">Global HQ</h4>
+                    <p class="tw-text-sm tw-text-gray-500">123 Innovation Drive, Tech District</p>
+                </div>
+            </div>
+            
+            <div class="tw-flex tw-items-start tw-gap-4">
+                <div class="tw-p-3 tw-rounded-lg tw-bg-[#f2f3f4] dark:tw-bg-[#262626] tw-text-[#ff8c42]">
+                    <i class="bi bi-envelope-fill tw-text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="tw-font-medium tw-text-lg">Direct Inquiry</h4>
+                    <p class="tw-text-sm tw-text-gray-500">architecture@philon.com</p>
+                </div>
+            </div>
         </div>
+      </div>
+
+      <div class="tw-mt-12">
+        <p class="tw-text-sm tw-text-gray-400">
+            * We sign NDAs before initial discovery calls upon request.
+        </p>
+      </div>
     </div>
-    </section>
+
+    <div class="tw-w-1/2 max-lg:tw-w-full tw-p-12 max-md:tw-p-6 tw-bg-[#f6f7fb] dark:tw-bg-[#171717]">
+      <form id="techAuditForm" class="tw-flex tw-flex-col tw-gap-6">
+        
+        <div class="tw-flex max-md:tw-flex-col tw-gap-6">
+            <div class="tw-flex tw-flex-col tw-w-full tw-gap-2">
+                <label class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Full Name</label>
+                <input required type="text" placeholder="John Doe" class="tw-w-full tw-p-4 tw-rounded-xl tw-bg-white dark:tw-bg-[#0a0a0a] tw-border tw-border-transparent focus:tw-border-[#ff8c42] tw-outline-none tw-transition-colors" />
+            </div>
+            <div class="tw-flex tw-flex-col tw-w-full tw-gap-2">
+                <label class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Company Name</label>
+                <input required type="text" placeholder="Acme Corp" class="tw-w-full tw-p-4 tw-rounded-xl tw-bg-white dark:tw-bg-[#0a0a0a] tw-border tw-border-transparent focus:tw-border-[#ff8c42] tw-outline-none tw-transition-colors" />
+            </div>
+        </div>
+
+        <div class="tw-flex max-md:tw-flex-col tw-gap-6">
+            <div class="tw-flex tw-flex-col tw-w-full tw-gap-2">
+                <label class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Work Email</label>
+                <input required type="email" placeholder="john@company.com" class="tw-w-full tw-p-4 tw-rounded-xl tw-bg-white dark:tw-bg-[#0a0a0a] tw-border tw-border-transparent focus:tw-border-[#ff8c42] tw-outline-none tw-transition-colors" />
+            </div>
+            <div class="tw-flex tw-flex-col tw-w-full tw-gap-2">
+                <label class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Primary Interest</label>
+                <div class="tw-relative">
+                    <select class="tw-w-full tw-p-4 tw-rounded-xl tw-bg-white dark:tw-bg-[#0a0a0a] tw-border tw-border-transparent focus:tw-border-[#ff8c42] tw-outline-none tw-appearance-none tw-cursor-pointer">
+                        <option>Enterprise Systems Design</option>
+                        <option>Intelligent Automation (AI)</option>
+                        <option>Legacy Migration</option>
+                        <option>Security & Compliance</option>
+                        <option>Full Ecosystem Build</option>
+                    </select>
+                    <i class="bi bi-chevron-down tw-absolute tw-right-4 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-400 tw-pointer-events-none"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="tw-flex tw-flex-col tw-gap-2">
+            <label class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Technical Requirements / Scope</label>
+            <textarea rows="4" placeholder="Briefly describe your current infrastructure challenges..." class="tw-w-full tw-p-4 tw-rounded-xl tw-bg-white dark:tw-bg-[#0a0a0a] tw-border tw-border-transparent focus:tw-border-[#ff8c42] tw-outline-none tw-transition-colors"></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="tw-mt-2 tw-w-full tw-p-4 tw-rounded-xl tw-bg-[#ff8c42] hover:tw-bg-[#e07b3a] tw-text-white tw-font-medium tw-transition-all active:tw-scale-[0.98] tw-flex tw-justify-center tw-items-center tw-gap-2">
+            <span>Request Audit</span>
+            <i class="bi bi-arrow-right"></i>
+        </button>
+
+      </form>
+
+      <div id="successMessage" class="tw-hidden tw-h-full tw-flex-col tw-place-content-center tw-items-center tw-text-center tw-gap-4">
+        <div class="tw-h-16 tw-w-16 tw-rounded-full tw-bg-green-100 dark:tw-bg-green-900 tw-text-green-600 dark:tw-text-green-400 tw-flex tw-items-center tw-justify-center tw-text-3xl">
+            <i class="bi bi-check-lg"></i>
+        </div>
+        <h3 class="tw-text-2xl tw-font-medium">Request Received</h3>
+        <p class="tw-text-gray-600 dark:tw-text-gray-400">
+            Our architectural team is reviewing your requirements.<br>We will be in touch within 24 hours.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
     <!--<section
       class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-2"
@@ -1854,6 +1943,30 @@
 
   <script src="./scripts/components.js"></script>
   <script src="./index.js"></script>
+
+  <!-- JS for the Contact Forms -->
+    <script>
+    document.getElementById('techAuditForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const btn = document.getElementById('submitBtn');
+        const originalText = btn.innerHTML;
+        
+        // 1. Change button state to loading
+        btn.innerHTML = '<span class="tw-animate-spin"><i class="bi bi-arrow-clockwise"></i></span> Processing...';
+        btn.disabled = true;
+        btn.classList.add('tw-opacity-70', 'tw-cursor-not-allowed');
+
+        // 2. Simulate API Call (2 seconds)
+        setTimeout(() => {
+            // 3. Hide Form, Show Success
+            this.style.display = 'none';
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.remove('tw-hidden');
+            successMsg.classList.add('tw-flex', 'reveal-up');
+        }, 2000);
+    });
+    </script>
 
   <!-- By João Galvão: https://github.com/JMGalvao -->
 </html>
