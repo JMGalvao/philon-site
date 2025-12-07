@@ -101,7 +101,8 @@ function updateToggleModeBtn(){
 
 }
 
-
+// Prompt window
+/*
 const promptWindow =  new Prompt("#pixa-playground")
 const promptForm = document.querySelector("#prompt-form")
 const promptInput = promptForm.querySelector("input[name='prompt']")
@@ -131,7 +132,9 @@ promptForm.addEventListener("submit", (event) => {
 
 const dropdowns = document.querySelectorAll('.dropdown')
 dropdowns.forEach(dropdown => new Dropdown(`#${dropdown.id}`, promptWindow.setAIModel))
+*/
 
+// nav dropdown
 
 navToggle.addEventListener("click", toggleNavDropdown)
 navDropdown.addEventListener("mouseleave", closeNavDropdown)
@@ -148,6 +151,8 @@ function toggleNavDropdown(){
 function navMouseLeave(){
     setTimeout(closeNavDropdown, 100)
 }
+
+
 
 function openNavDropdown(event){
 
