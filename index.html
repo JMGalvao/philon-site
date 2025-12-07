@@ -393,51 +393,54 @@
             </div>
         </footer>
 
-        <dialog id="contact-modal" class="modal-styles">
-            <div class="modal-content">
-                <div class="modal-header">
-                <button id="close-modal-btn" class="close-text">Fechar</button>
-                </div>
-                
-                <h2>Fale-nos sobre o projeto que tem em mente!</h2>
-                
-                <form method="dialog" id="project-form">
-                <div class="input-group">
-                    <label for="nome">Nome</label>
-                    <input type="text" id="nome" name="nome" required>
+        <dialog id="contact-modal" class="modal-styles tw-p-4">
+            <div class="modal-content tw-max-w-2xl tw-w-full tw-bg-[#0f0f0f] tw-rounded-lg tw-p-6 lg:tw-p-8 tw-shadow-2xl tw-text-white">
+                <div class="modal-header tw-flex tw-justify-end">
+                    <button id="close-modal-btn" class="close-text tw-text-sm tw-text-gray-300 hover:tw-text-white tw-font-semibold">Fechar</button>
                 </div>
 
-                <div class="input-group">
-                    <label for="empresa">Empresa</label>
-                    <input type="text" id="empresa" name="empresa">
-                </div>
+                <h2 class="tw-text-2xl lg:tw-text-3xl tw-font-semibold">Fale-nos sobre o projeto que tem em mente!</h2>
 
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+                <form method="dialog" id="project-form" class="tw-mt-4 tw-grid tw-gap-4">
+                    <div class="tw-grid sm:tw-grid-cols-2 tw-gap-4">
+                        <div>
+                            <label for="nome" class="tw-text-sm tw-text-gray-200">Nome</label>
+                            <input type="text" id="nome" name="nome" required class="tw-w-full tw-bg-transparent tw-text-white tw-border-b tw-border-gray-600 tw-py-2 focus:tw-outline-none focus:tw-border-white" />
+                        </div>
 
-                <div class="input-group">
-                    <label for="contacto">Contacto</label>
-                    <input type="tel" id="contacto" name="contacto">
-                </div>
+                        <div>
+                            <label for="empresa" class="tw-text-sm tw-text-gray-200">Empresa</label>
+                            <input type="text" id="empresa" name="empresa" class="tw-w-full tw-bg-transparent tw-text-white tw-border-b tw-border-gray-600 tw-py-2 focus:tw-outline-none focus:tw-border-white" />
+                        </div>
+                    </div>
 
-                <div class="input-group">
-                    <label for="projeto">Conte-nos o seu projeto</label>
-                    <textarea id="projeto" name="projeto" rows="1"></textarea>
-                </div>
+                    <div class="tw-grid sm:tw-grid-cols-2 tw-gap-4">
+                        <div>
+                            <label for="email" class="tw-text-sm tw-text-gray-200">Email</label>
+                            <input type="email" id="email" name="email" required class="tw-w-full tw-bg-transparent tw-text-white tw-border-b tw-border-gray-600 tw-py-2 focus:tw-outline-none focus:tw-border-white" />
+                        </div>
 
-                <div class="form-footer">
-                    <label class="checkbox-container">
-                    <input type="checkbox" required>
-                    <span class="checkmark"></span>
-                    <span class="terms-text">Li e aceito a <a href="#">Política de Privacidade</a></span>
-                    </label>
+                        <div>
+                            <label for="contacto" class="tw-text-sm tw-text-gray-200">Contacto</label>
+                            <input type="tel" id="contacto" name="contacto" class="tw-w-full tw-bg-transparent tw-text-white tw-border-b tw-border-gray-600 tw-py-2 focus:tw-outline-none focus:tw-border-white" />
+                        </div>
+                    </div>
 
-                    <button type="submit" class="submit-btn">
-                    Enviar <span class="arrow-icon">→</span>
-                    </button>
-                </div>
+                    <div>
+                        <label for="projeto" class="tw-text-sm tw-text-gray-200">Conte-nos o seu projeto</label>
+                        <textarea id="projeto" name="projeto" rows="4" class="tw-w-full tw-bg-transparent tw-text-white tw-border tw-border-gray-700 tw-rounded tw-p-3 focus:tw-outline-none focus:tw-border-white"></textarea>
+                    </div>
+
+                    <div class="form-footer tw-flex tw-flex-col lg:tw-flex-row tw-justify-between tw-items-center tw-gap-4 tw-mt-2">
+                        <label class="tw-flex tw-items-start tw-gap-3 tw-text-sm">
+                            <input type="checkbox" required class="tw-w-4 tw-h-4 tw-rounded tw-bg-transparent tw-border tw-border-gray-600 focus:tw-ring-0" />
+                            <span class="terms-text tw-text-xs tw-text-gray-400">Li e aceito a <a href="#" class="tw-underline">Política de Privacidade</a></span>
+                        </label>
+
+                        <button type="submit" class="submit-btn tw-bg-white tw-text-black tw-font-bold tw-px-5 tw-py-2 tw-rounded-md tw-shadow hover:tw-bg-gray-100">
+                            Enviar <span class="arrow-icon tw-ml-2">→</span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </dialog>
