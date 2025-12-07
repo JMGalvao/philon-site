@@ -55,13 +55,17 @@ function responsive() {
 
     if (window.innerWidth > RESPONSIVE_WIDTH) {
         collapseHeaderItems.style.height = ""
-        navToggle.addEventListener("mouseenter", openNavDropdown)
-        navToggle.addEventListener("mouseleave", navMouseLeave)
+        if (navToggle) {
+            navToggle.addEventListener("mouseenter", openNavDropdown)
+            navToggle.addEventListener("mouseleave", navMouseLeave)
+        }
 
     } else {
         isHeaderCollapsed = true
-        navToggle.removeEventListener("mouseenter", openNavDropdown)
-        navToggle.removeEventListener("mouseleave", navMouseLeave)
+        if (navToggle) {
+            navToggle.removeEventListener("mouseenter", openNavDropdown)
+            navToggle.removeEventListener("mouseleave", navMouseLeave)
+        }
     }
 }
 responsive()
@@ -133,8 +137,12 @@ const dropdowns = document.querySelectorAll('.dropdown')
 dropdowns.forEach(dropdown => new Dropdown(`#${dropdown.id}`, promptWindow.setAIModel))
 
 
-navToggle.addEventListener("click", toggleNavDropdown)
-navDropdown.addEventListener("mouseleave", closeNavDropdown)
+if (navToggle) {
+    navToggle.addEventListener("click", toggleNavDropdown)
+}
+if (navDropdown) {
+    navDropdown.addEventListener("mouseleave", closeNavDropdown)
+}
 
 function toggleNavDropdown(){
 
