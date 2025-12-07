@@ -25,6 +25,7 @@
         <link rel="stylesheet" href="css/index.css" />
 
         <link rel="stylesheet" href="./css/bootstrap-icons.css" />
+        <link rel="stylesheet" href="./css/contact-modal.css">
     </head>
     <body
         class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-black tw-text-white"
@@ -54,10 +55,7 @@
                     class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
                 >
                     <a
-                        href="#"
-                        aria-label="signup"
-                        class="tw-rounded-full tw-bg-white tw-px-3 tw-py-2 tw-text-black tw-transition-transform tw-duration-[0.3s] hover:tw-translate-x-2"
-                        data-open-form="lead"
+                        id="open-modal-btn" class="cta-button"
                     >
                         <span>Get started</span>
                         <i class="bi bi-arrow-right"></i>
@@ -392,18 +390,59 @@
                 </div>
             </div>
         </footer>
+
+        <dialog id="contact-modal" class="modal-styles">
+            <div class="modal-content">
+                <div class="modal-header">
+                <button id="close-modal-btn" class="close-text">Fechar</button>
+                </div>
+                
+                <h2>Fale-nos sobre o projeto que tem em mente!</h2>
+                
+                <form method="dialog" id="project-form">
+                <div class="input-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="contacto">Contacto</label>
+                    <input type="tel" id="contacto" name="contacto">
+                </div>
+
+                <div class="input-group">
+                    <label for="projeto">Conte-nos o seu projeto</label>
+                    <textarea id="projeto" name="projeto" rows="1"></textarea>
+                </div>
+
+                <div class="form-footer">
+                    <label class="checkbox-container">
+                    <input type="checkbox" required>
+                    <span class="checkmark"></span>
+                    <span class="terms-text">Li e aceito a <a href="#">Política de Privacidade</a></span>
+                    </label>
+
+                    <button type="submit" class="submit-btn">
+                    Enviar <span class="arrow-icon">→</span>
+                    </button>
+                </div>
+                </form>
+            </div>
+        </dialog>
     </body>
 
-    <script
-        src="/js/gsap.min.js"
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-    <script
-        src="/js/ScrollTrigger.min.js"
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    ></script>
-
+    <script src="/js/gsap.min.js"></script>
+    <script src="/js/ScrollTrigger.min.js"></script>
     <script src="./index.js"></script>
+    <script src="./js/contact-modal.js" defer></script>
 </html>
