@@ -55,17 +55,13 @@ function responsive() {
 
     if (window.innerWidth > RESPONSIVE_WIDTH) {
         collapseHeaderItems.style.height = ""
-        if (navToggle) {
-            navToggle.addEventListener("mouseenter", openNavDropdown)
-            navToggle.addEventListener("mouseleave", navMouseLeave)
-        }
+        navToggle.addEventListener("mouseenter", openNavDropdown)
+        navToggle.addEventListener("mouseleave", navMouseLeave)
 
     } else {
         isHeaderCollapsed = true
-        if (navToggle) {
-            navToggle.removeEventListener("mouseenter", openNavDropdown)
-            navToggle.removeEventListener("mouseleave", navMouseLeave)
-        }
+        navToggle.removeEventListener("mouseenter", openNavDropdown)
+        navToggle.removeEventListener("mouseleave", navMouseLeave)
     }
 }
 responsive()
@@ -106,7 +102,7 @@ function updateToggleModeBtn(){
 }
 
 
-const promptWindow =  new Prompt("#philon-playground")
+const promptWindow =  new Prompt("#pixa-playground")
 const promptForm = document.querySelector("#prompt-form")
 const promptInput = promptForm.querySelector("input[name='prompt']")
 
@@ -137,16 +133,12 @@ const dropdowns = document.querySelectorAll('.dropdown')
 dropdowns.forEach(dropdown => new Dropdown(`#${dropdown.id}`, promptWindow.setAIModel))
 
 
-if (navToggle) {
-    navToggle.addEventListener("click", toggleNavDropdown)
-}
-if (navDropdown) {
-    navDropdown.addEventListener("mouseleave", closeNavDropdown)
-}
+navToggle.addEventListener("click", toggleNavDropdown)
+navDropdown.addEventListener("mouseleave", closeNavDropdown)
 
 function toggleNavDropdown(){
 
-    if (navDropdown && navDropdown.getAttribute("data-open") === "true"){
+    if (navDropdown.getAttribute("data-open") === "true"){
         closeNavDropdown()
     }else{
         openNavDropdown()
@@ -159,12 +151,10 @@ function navMouseLeave(){
 
 function openNavDropdown(event){
 
-    if (navDropdown) {
-        navDropdown.classList.add("tw-opacity-100", "tw-scale-100", 
-                                "max-lg:tw-min-h-[450px]", "max-lg:!tw-h-fit", "tw-min-w-[320px]")
-        
-        navDropdown.setAttribute("data-open", true)
-    }
+    navDropdown.classList.add("tw-opacity-100", "tw-scale-100", 
+                            "max-lg:tw-min-h-[450px]", "max-lg:!tw-h-fit", "tw-min-w-[320px]")
+    
+    navDropdown.setAttribute("data-open", true)
 
 }
 
@@ -172,16 +162,14 @@ function closeNavDropdown(event){
 
     // console.log("event target: ", event.target, event.target.contains(navDropdown))
     
-    if (navDropdown && navDropdown.matches(":hover")){
+    if (navDropdown.matches(":hover")){
         return
     }
 
-    if (navDropdown) {
-        navDropdown.classList.remove("tw-opacity-100", "tw-scale-100", 
-            "max-lg:tw-min-h-[450px]", "tw-min-w-[320px]", "max-lg:!tw-h-fit",)
+    navDropdown.classList.remove("tw-opacity-100", "tw-scale-100", 
+        "max-lg:tw-min-h-[450px]", "tw-min-w-[320px]", "max-lg:!tw-h-fit",)
 
-        navDropdown.setAttribute("data-open", false)
-    }
+    navDropdown.setAttribute("data-open", false)
 
 }
 
@@ -190,29 +178,25 @@ const videoBg = document.querySelector("#video-container-bg")
 const videoContainer = document.querySelector("#video-container")
 
 function openVideo(){
-    if (videoBg && videoContainer) {
-        videoBg.classList.remove("tw-scale-0", "tw-opacity-0")
-        videoBg.classList.add("tw-scale-100", "tw-opacity-100")
-        videoContainer.classList.remove("tw-scale-0")
-        videoContainer.classList.add("tw-scale-100")
+    videoBg.classList.remove("tw-scale-0", "tw-opacity-0")
+    videoBg.classList.add("tw-scale-100", "tw-opacity-100")
+    videoContainer.classList.remove("tw-scale-0")
+    videoContainer.classList.add("tw-scale-100")
 
-        document.body.classList.add("modal-open")
-    }
+    document.body.classList.add("modal-open")
 }
 
 function closeVideo(){
-    if (videoContainer && videoBg) {
-        videoContainer.classList.add("tw-scale-0")
-        videoContainer.classList.remove("tw-scale-100")
+    videoContainer.classList.add("tw-scale-0")
+    videoContainer.classList.remove("tw-scale-100")
 
-        setTimeout(() => {
-            videoBg.classList.remove("tw-scale-100", "tw-opacity-100")
-            videoBg.classList.add("tw-scale-0", "tw-opacity-0")
-        }, 400)
-    
+    setTimeout(() => {
+        videoBg.classList.remove("tw-scale-100", "tw-opacity-100")
+        videoBg.classList.add("tw-scale-0", "tw-opacity-0")
+    }, 400)
+   
 
-        document.body.classList.remove("modal-open")
-    }
+    document.body.classList.remove("modal-open")
 
 }
 
@@ -222,9 +206,9 @@ function closeVideo(){
 
 const typed = new Typed('#prompts-sample', {
     strings: ["How to solve a rubik's cube? Step by step guide", 
-                "What's Philon playground?", 
+                "What's Pixa playground?", 
                 "How to build an AI SaaS App?", 
-                "How to integrate Philon API?"],
+                "How to integrate Pixa API?"],
     typeSpeed: 80,
     smartBackspace: true, 
     loop: true,
@@ -241,23 +225,21 @@ gsap.to(".reveal-up", {
 
 
 // straightens the slanting image
-if (document.querySelector("#dashboard")) {
-    gsap.to("#dashboard", {
+gsap.to("#dashboard", {
 
-        scale: 1,
-        translateY: 0,
-        // translateY: "0%",
-        rotateX: "0deg",
-        scrollTrigger: {
-            trigger: "#hero-section",
-            start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
-            end: "bottom bottom",
-            scrub: 1,
-            // markers: true,
-        }
+    scale: 1,
+    translateY: 0,
+    // translateY: "0%",
+    rotateX: "0deg",
+    scrollTrigger: {
+        trigger: "#hero-section",
+        start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
+        end: "bottom bottom",
+        scrub: 1,
+        // markers: true,
+    }
 
-    })
-}
+})
 
 const faqAccordion = document.querySelectorAll('.faq-accordion')
 
@@ -270,7 +252,7 @@ faqAccordion.forEach(function (btn) {
         let icon = this.querySelector(".bi-plus")
 
         // content.classList.toggle('!tw-hidden')
-        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+        if (content.style.maxHeight === '240px') {
             content.style.maxHeight = '0px'
             content.style.padding = '0px 18px'
             icon.style.transform = "rotate(0deg)"
