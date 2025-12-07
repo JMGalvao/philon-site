@@ -164,6 +164,19 @@ hr {
   opacity: 0.5;
 }
 
+.orange-bg-grad {
+  background: rgb(255, 140, 66);
+  background: linear-gradient(
+    90deg,
+    #ff450091 8%,   /* Deep Red-Orange */
+    #ff8c42ae 31%,  /* Your text color */
+    #ffbf00bc 76%,  /* Amber */
+    #ffd700ca 89%   /* Bright Gold/Yellow */
+  );
+  filter: blur(50px);
+  opacity: 0.5;
+}
+
 #dashboard {
   /* transform-origin: bottom center; */
   transform: perspective(1200px) translateX(0px) translateY(12px) scale(0.8)
