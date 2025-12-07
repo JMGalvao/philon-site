@@ -111,8 +111,6 @@ const MAX_PROMPTS = 3
 promptForm.addEventListener("submit", (event) => {
     event.preventDefault()
 
-    // window.open("https://github.com/PaulleDemon", "_blank")
-
     if (promptWindow.promptList.length >= MAX_PROMPTS)
         return false
 
