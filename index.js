@@ -104,30 +104,33 @@ function updateToggleModeBtn(){
 
 const promptWindow =  new Prompt("#pixa-playground")
 const promptForm = document.querySelector("#prompt-form")
-const promptInput = promptForm.querySelector("input[name='prompt']")
 
-const MAX_PROMPTS = 3
+if (promptForm) {
+    const promptInput = promptForm.querySelector("input[name='prompt']")
 
-promptForm.addEventListener("submit", (event) => {
-    event.preventDefault()
+    const MAX_PROMPTS = 3
 
-    if (promptWindow.promptList.length >= MAX_PROMPTS)
+    promptForm.addEventListener("submit", (event) => {
+        event.preventDefault()
+
+        if (promptWindow.promptList.length >= MAX_PROMPTS)
+            return false
+
+        promptWindow.addPrompt(promptInput.value)
+        promptInput.value = ""
+        
+        if (promptWindow.promptList.length >= MAX_PROMPTS){
+            // prompt signup once the user makes 3 prompts, ideally must be throttled via backend API
+            const signUpPrompt = document.querySelector("#signup-prompt")
+            signUpPrompt.classList.add("tw-scale-100")
+            signUpPrompt.classList.remove("tw-scale-0")
+
+            promptForm.querySelectorAll("input").forEach(e => {e.disabled = true})
+        }
+
         return false
-
-    promptWindow.addPrompt(promptInput.value)
-    promptInput.value = ""
-    
-    if (promptWindow.promptList.length >= MAX_PROMPTS){
-        // prompt signup once the user makes 3 prompts, ideally must be throttled via backend API
-        const signUpPrompt = document.querySelector("#signup-prompt")
-        signUpPrompt.classList.add("tw-scale-100")
-        signUpPrompt.classList.remove("tw-scale-0")
-
-        promptForm.querySelectorAll("input").forEach(e => {e.disabled = true})
-    }
-
-    return false
-})
+    })
+}
 
 const dropdowns = document.querySelectorAll('.dropdown')
 dropdowns.forEach(dropdown => new Dropdown(`#${dropdown.id}`, promptWindow.setAIModel))
