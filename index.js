@@ -170,14 +170,16 @@ function closeNavDropdown(event){
 
     // console.log("event target: ", event.target, event.target.contains(navDropdown))
     
-    if (navDropdown.matches(":hover")){
+    if (navDropdown && navDropdown.matches(":hover")){
         return
     }
 
-    navDropdown.classList.remove("tw-opacity-100", "tw-scale-100", 
-        "max-lg:tw-min-h-[450px]", "tw-min-w-[320px]", "max-lg:!tw-h-fit",)
+    if (navDropdown) {
+        navDropdown.classList.remove("tw-opacity-100", "tw-scale-100", 
+            "max-lg:tw-min-h-[450px]", "tw-min-w-[320px]", "max-lg:!tw-h-fit",)
 
-    navDropdown.setAttribute("data-open", false)
+        navDropdown.setAttribute("data-open", false)
+    }
 
 }
 
@@ -186,25 +188,29 @@ const videoBg = document.querySelector("#video-container-bg")
 const videoContainer = document.querySelector("#video-container")
 
 function openVideo(){
-    videoBg.classList.remove("tw-scale-0", "tw-opacity-0")
-    videoBg.classList.add("tw-scale-100", "tw-opacity-100")
-    videoContainer.classList.remove("tw-scale-0")
-    videoContainer.classList.add("tw-scale-100")
+    if (videoBg && videoContainer) {
+        videoBg.classList.remove("tw-scale-0", "tw-opacity-0")
+        videoBg.classList.add("tw-scale-100", "tw-opacity-100")
+        videoContainer.classList.remove("tw-scale-0")
+        videoContainer.classList.add("tw-scale-100")
 
-    document.body.classList.add("modal-open")
+        document.body.classList.add("modal-open")
+    }
 }
 
 function closeVideo(){
-    videoContainer.classList.add("tw-scale-0")
-    videoContainer.classList.remove("tw-scale-100")
+    if (videoContainer && videoBg) {
+        videoContainer.classList.add("tw-scale-0")
+        videoContainer.classList.remove("tw-scale-100")
 
-    setTimeout(() => {
-        videoBg.classList.remove("tw-scale-100", "tw-opacity-100")
-        videoBg.classList.add("tw-scale-0", "tw-opacity-0")
-    }, 400)
-   
+        setTimeout(() => {
+            videoBg.classList.remove("tw-scale-100", "tw-opacity-100")
+            videoBg.classList.add("tw-scale-0", "tw-opacity-0")
+        }, 400)
+    
 
-    document.body.classList.remove("modal-open")
+        document.body.classList.remove("modal-open")
+    }
 
 }
 
@@ -233,21 +239,23 @@ gsap.to(".reveal-up", {
 
 
 // straightens the slanting image
-gsap.to("#dashboard", {
+if (document.querySelector("#dashboard")) {
+    gsap.to("#dashboard", {
 
-    scale: 1,
-    translateY: 0,
-    // translateY: "0%",
-    rotateX: "0deg",
-    scrollTrigger: {
-        trigger: "#hero-section",
-        start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
-        end: "bottom bottom",
-        scrub: 1,
-        // markers: true,
-    }
+        scale: 1,
+        translateY: 0,
+        // translateY: "0%",
+        rotateX: "0deg",
+        scrollTrigger: {
+            trigger: "#hero-section",
+            start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
+            end: "bottom bottom",
+            scrub: 1,
+            // markers: true,
+        }
 
-})
+    })
+}
 
 const faqAccordion = document.querySelectorAll('.faq-accordion')
 
