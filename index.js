@@ -120,11 +120,11 @@ const closeModalBtn = document.getElementById('close-modal');
 const contactForm = document.getElementById('contact-form');
 
 function openModal() {
-    modal.classList.remove('tw-hidden');
+    modal.style.display = 'flex';
 }
 
 function closeModal() {
-    modal.classList.add('tw-hidden');
+    modal.style.display = 'none';
 }
 
 document.getElementById('get-started-header').addEventListener('click', openModal);
