@@ -114,35 +114,27 @@ faqAccordion.forEach(function (btn) {
     })
 })
 
-// Modal functionality
-const modal = document.getElementById('modal');
-const closeModalBtn = document.getElementById('close-modal');
-const contactForm = document.getElementById('contact-form');
+// ------------- reveal section animations ---------------
 
-function openModal() {
-    modal.style.display = 'flex';
-}
+const sections = gsap.utils.toArray("section")
 
-function closeModal() {
-    modal.style.display = 'none';
-}
+sections.forEach((sec) => {
 
-document.getElementById('get-started-header').addEventListener('click', openModal);
-document.getElementById('get-started-hero').addEventListener('click', openModal);
-document.getElementById('contact-btn').addEventListener('click', openModal);
+    const revealUptimeline = gsap.timeline({paused: true, 
+                                            scrollTrigger: {
+                                                            trigger: sec,
+                                                            start: "10% 80%", // top of trigger hits the top of viewport
+                                                            end: "20% 90%",
+                                                            // markers: true,
+                                                            // scrub: 1,
+                                                        }})
 
-closeModalBtn.addEventListener('click', closeModal);
+    revealUptimeline.to(sec.querySelectorAll(".reveal-up"), {
+        opacity: 1,
+        duration: 0.8,
+        y: "0%",
+        stagger: 0.2,
+    })
 
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        closeModal();
-    }
-});
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // For now, just close the modal. In a real app, you'd send the data to a server.
-    alert('Thank you for your message! We will get back to you soon.');
-    closeModal();
-    contactForm.reset();
-});
+})
