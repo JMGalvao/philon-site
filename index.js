@@ -102,10 +102,11 @@ function updateToggleModeBtn(){
 }
 
 
-const promptWindow =  new Prompt("#pixa-playground")
+const playground = document.querySelector("#pixa-playground")
+const promptWindow = playground ? new Prompt("#pixa-playground") : null
 const promptForm = document.querySelector("#prompt-form")
 
-if (promptForm) {
+if (promptForm && promptWindow) {
     const promptInput = promptForm.querySelector("input[name='prompt']")
 
     const MAX_PROMPTS = 3
@@ -133,7 +134,10 @@ if (promptForm) {
 }
 
 const dropdowns = document.querySelectorAll('.dropdown')
-dropdowns.forEach(dropdown => new Dropdown(`#${dropdown.id}`, promptWindow.setAIModel))
+dropdowns.forEach(dropdown => {
+    const onChange = promptWindow ? promptWindow.setAIModel : null
+    new Dropdown(`#${dropdown.id}`, onChange)
+})
 
 
 navToggle.addEventListener("click", toggleNavDropdown)
@@ -207,16 +211,18 @@ function closeVideo(){
  * Animations
  */
 
-const typed = new Typed('#prompts-sample', {
-    strings: ["How to solve a rubik's cube? Step by step guide", 
-                "What's Pixa playground?", 
-                "How to build an AI SaaS App?", 
-                "How to integrate Pixa API?"],
-    typeSpeed: 80,
-    smartBackspace: true, 
-    loop: true,
-    backDelay: 2000,
-})
+if (document.querySelector('#prompts-sample')) {
+    const typed = new Typed('#prompts-sample', {
+        strings: ["How to solve a rubik's cube? Step by step guide", 
+                    "What's Pixa playground?", 
+                    "How to build an AI SaaS App?", 
+                    "How to integrate Pixa API?"],
+        typeSpeed: 80,
+        smartBackspace: true, 
+        loop: true,
+        backDelay: 2000,
+    })
+}
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -228,21 +234,23 @@ gsap.to(".reveal-up", {
 
 
 // straightens the slanting image
-gsap.to("#dashboard", {
+if (document.querySelector("#dashboard")) {
+    gsap.to("#dashboard", {
 
-    scale: 1,
-    translateY: 0,
-    // translateY: "0%",
-    rotateX: "0deg",
-    scrollTrigger: {
-        trigger: "#hero-section",
-        start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
-        end: "bottom bottom",
-        scrub: 1,
-        // markers: true,
-    }
+        scale: 1,
+        translateY: 0,
+        // translateY: "0%",
+        rotateX: "0deg",
+        scrollTrigger: {
+            trigger: "#hero-section",
+            start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
+            end: "bottom bottom",
+            scrub: 1,
+            // markers: true,
+        }
 
-})
+    })
+}
 
 const faqAccordion = document.querySelectorAll('.faq-accordion')
 
