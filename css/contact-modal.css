@@ -1,71 +1,76 @@
 /* Modal Backdrop (The dark overlay) */
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.8); /* Match site background */
+  backdrop-filter: blur(4px); /* Enhance blur */
 }
 
 /* Modal Container */
 dialog.modal-styles {
   border: none;
-  border-radius: 16px;
-  padding: 40px;
+  border-radius: 12px; /* Slightly smaller radius */
+  padding: 32px; /* Adjust padding */
   max-width: 600px;
   width: 90%;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  font-family: 'Helvetica', sans-serif; /* or your site's font */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Darker shadow */
+  font-family: 'Arial', sans-serif; /* Match site font */
+  background-color: #1a1a1a; /* Match site background */
+  color: #f5f5f5; /* Match site text color */
 }
 
 /* Header & Close Button */
 .modal-header {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 10px;
+  margin-bottom: 16px; /* Adjust spacing */
 }
 
 .close-text {
   background: none;
   border: none;
-  font-size: 12px;
+  font-size: 14px; /* Slightly larger */
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
+  color: #f5f5f5; /* Match site text color */
 }
 
 dialog h2 {
-  font-size: 24px;
-  font-weight: 300;
-  margin-bottom: 30px;
-  color: #333;
+  font-size: 20px; /* Adjust font size */
+  font-weight: 400; /* Slightly bolder */
+  margin-bottom: 24px; /* Adjust spacing */
+  color: #f5f5f5; /* Match site text color */
 }
 
 /* Input Styles (Underline only) */
 .input-group {
-  margin-bottom: 25px;
+  margin-bottom: 20px; /* Adjust spacing */
   display: flex;
   flex-direction: column;
 }
 
 .input-group label {
-  font-size: 12px;
+  font-size: 14px; /* Adjust font size */
   font-weight: bold;
-  margin-bottom: 5px;
-  color: #000;
+  margin-bottom: 8px; /* Adjust spacing */
+  color: #f5f5f5; /* Match site text color */
 }
 
 .input-group input, 
 .input-group textarea {
   border: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #555; /* Match site colors */
   padding: 8px 0;
   font-size: 16px;
   outline: none;
   width: 100%;
+  background-color: transparent; /* Match site background */
+  color: #f5f5f5; /* Match site text color */
   transition: border-color 0.3s;
 }
 
 .input-group input:focus, 
 .input-group textarea:focus {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #f5f5f5; /* Match site text color */
 }
 
 /* Footer & Submit Button */
@@ -73,16 +78,17 @@ dialog h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 24px; /* Adjust spacing */
 }
 
 .terms-text {
   font-size: 12px;
-  color: #666;
+  color: #aaa; /* Match site muted text color */
 }
 
 .submit-btn {
-  background: white;
+  background: #f5f5f5; /* Match site button color */
+  color: #1a1a1a; /* Match site button text color */
   border: none;
   font-size: 16px;
   font-weight: bold;
@@ -90,6 +96,13 @@ dialog h2 {
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  padding: 8px 16px; /* Add padding */
+  border-radius: 4px; /* Add slight rounding */
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background: #e5e5e5; /* Slightly lighter on hover */
 }
 
 .arrow-icon {
@@ -98,7 +111,8 @@ dialog h2 {
   align-items: center;
   width: 30px;
   height: 30px;
-  border: 1px solid #ddd;
+  border: 1px solid #555; /* Match site colors */
   border-radius: 50%;
   font-size: 14px;
+  color: #f5f5f5; /* Match site text color */
 }
