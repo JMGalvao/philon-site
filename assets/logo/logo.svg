@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="Philon">
+  <rect width="96" height="96" rx="12" fill="#7e22ce" />
+  <circle cx="32" cy="32" r="18" fill="#fff" />
+  <text x="50%" y="62%" font-family="Arial, Helvetica, sans-serif" font-size="42" fill="#fff" font-weight="700" text-anchor="middle">P</text>
+</svg>
