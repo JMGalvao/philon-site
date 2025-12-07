@@ -55,13 +55,17 @@ function responsive() {
 
     if (window.innerWidth > RESPONSIVE_WIDTH) {
         collapseHeaderItems.style.height = ""
-        navToggle.addEventListener("mouseenter", openNavDropdown)
-        navToggle.addEventListener("mouseleave", navMouseLeave)
+        if (navToggle) {
+            navToggle.addEventListener("mouseenter", openNavDropdown)
+            navToggle.addEventListener("mouseleave", navMouseLeave)
+        }
 
     } else {
         isHeaderCollapsed = true
-        navToggle.removeEventListener("mouseenter", openNavDropdown)
-        navToggle.removeEventListener("mouseleave", navMouseLeave)
+        if (navToggle) {
+            navToggle.removeEventListener("mouseenter", openNavDropdown)
+            navToggle.removeEventListener("mouseleave", navMouseLeave)
+        }
     }
 }
 responsive()
@@ -102,7 +106,7 @@ function updateToggleModeBtn(){
 }
 
 
-const promptWindow =  new Prompt("#pixa-playground")
+const promptWindow =  new Prompt("#philon-playground")
 const promptForm = document.querySelector("#prompt-form")
 const promptInput = promptForm.querySelector("input[name='prompt']")
 
@@ -133,8 +137,12 @@ const dropdowns = document.querySelectorAll('.dropdown')
 dropdowns.forEach(dropdown => new Dropdown(`#${dropdown.id}`, promptWindow.setAIModel))
 
 
-navToggle.addEventListener("click", toggleNavDropdown)
-navDropdown.addEventListener("mouseleave", closeNavDropdown)
+if (navToggle) {
+    navToggle.addEventListener("click", toggleNavDropdown)
+}
+if (navDropdown) {
+    navDropdown.addEventListener("mouseleave", closeNavDropdown)
+}
 
 function toggleNavDropdown(){
 
@@ -206,9 +214,9 @@ function closeVideo(){
 
 const typed = new Typed('#prompts-sample', {
     strings: ["How to solve a rubik's cube? Step by step guide", 
-                "What's Pixa playground?", 
+                "What's Philon playground?", 
                 "How to build an AI SaaS App?", 
-                "How to integrate Pixa API?"],
+                "How to integrate Philon API?"],
     typeSpeed: 80,
     smartBackspace: true, 
     loop: true,
