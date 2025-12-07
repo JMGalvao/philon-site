@@ -102,42 +102,35 @@ function updateToggleModeBtn(){
 }
 
 
-const playground = document.querySelector("#pixa-playground")
-const promptWindow = playground ? new Prompt("#pixa-playground") : null
+const promptWindow =  new Prompt("#pixa-playground")
 const promptForm = document.querySelector("#prompt-form")
+const promptInput = promptForm.querySelector("input[name='prompt']")
 
-if (promptForm && promptWindow) {
-    const promptInput = promptForm.querySelector("input[name='prompt']")
+const MAX_PROMPTS = 3
 
-    const MAX_PROMPTS = 3
+promptForm.addEventListener("submit", (event) => {
+    event.preventDefault()
 
-    promptForm.addEventListener("submit", (event) => {
-        event.preventDefault()
-
-        if (promptWindow.promptList.length >= MAX_PROMPTS)
-            return false
-
-        promptWindow.addPrompt(promptInput.value)
-        promptInput.value = ""
-        
-        if (promptWindow.promptList.length >= MAX_PROMPTS){
-            // prompt signup once the user makes 3 prompts, ideally must be throttled via backend API
-            const signUpPrompt = document.querySelector("#signup-prompt")
-            signUpPrompt.classList.add("tw-scale-100")
-            signUpPrompt.classList.remove("tw-scale-0")
-
-            promptForm.querySelectorAll("input").forEach(e => {e.disabled = true})
-        }
-
+    if (promptWindow.promptList.length >= MAX_PROMPTS)
         return false
-    })
-}
+
+    promptWindow.addPrompt(promptInput.value)
+    promptInput.value = ""
+    
+    if (promptWindow.promptList.length >= MAX_PROMPTS){
+        // prompt signup once the user makes 3 prompts, ideally must be throttled via backend API
+        const signUpPrompt = document.querySelector("#signup-prompt")
+        signUpPrompt.classList.add("tw-scale-100")
+        signUpPrompt.classList.remove("tw-scale-0")
+
+        promptForm.querySelectorAll("input").forEach(e => {e.disabled = true})
+    }
+
+    return false
+})
 
 const dropdowns = document.querySelectorAll('.dropdown')
-dropdowns.forEach(dropdown => {
-    const onChange = promptWindow ? promptWindow.setAIModel : null
-    new Dropdown(`#${dropdown.id}`, onChange)
-})
+dropdowns.forEach(dropdown => new Dropdown(`#${dropdown.id}`, promptWindow.setAIModel))
 
 
 navToggle.addEventListener("click", toggleNavDropdown)
@@ -211,18 +204,16 @@ function closeVideo(){
  * Animations
  */
 
-if (document.querySelector('#prompts-sample')) {
-    const typed = new Typed('#prompts-sample', {
-        strings: ["How to solve a rubik's cube? Step by step guide", 
-                    "What's Pixa playground?", 
-                    "How to build an AI SaaS App?", 
-                    "How to integrate Pixa API?"],
-        typeSpeed: 80,
-        smartBackspace: true, 
-        loop: true,
-        backDelay: 2000,
-    })
-}
+const typed = new Typed('#prompts-sample', {
+    strings: ["How to solve a rubik's cube? Step by step guide", 
+                "What's Pixa playground?", 
+                "How to build an AI SaaS App?", 
+                "How to integrate Pixa API?"],
+    typeSpeed: 80,
+    smartBackspace: true, 
+    loop: true,
+    backDelay: 2000,
+})
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -234,23 +225,21 @@ gsap.to(".reveal-up", {
 
 
 // straightens the slanting image
-if (document.querySelector("#dashboard")) {
-    gsap.to("#dashboard", {
+gsap.to("#dashboard", {
 
-        scale: 1,
-        translateY: 0,
-        // translateY: "0%",
-        rotateX: "0deg",
-        scrollTrigger: {
-            trigger: "#hero-section",
-            start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
-            end: "bottom bottom",
-            scrub: 1,
-            // markers: true,
-        }
+    scale: 1,
+    translateY: 0,
+    // translateY: "0%",
+    rotateX: "0deg",
+    scrollTrigger: {
+        trigger: "#hero-section",
+        start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
+        end: "bottom bottom",
+        scrub: 1,
+        // markers: true,
+    }
 
-    })
-}
+})
 
 const faqAccordion = document.querySelectorAll('.faq-accordion')
 
