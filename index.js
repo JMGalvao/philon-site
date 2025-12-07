@@ -240,21 +240,23 @@ gsap.to(".reveal-up", {
 
 
 // straightens the slanting image
-gsap.to("#dashboard", {
+if (document.querySelector("#dashboard")) {
+    gsap.to("#dashboard", {
 
-    scale: 1,
-    translateY: 0,
-    // translateY: "0%",
-    rotateX: "0deg",
-    scrollTrigger: {
-        trigger: "#hero-section",
-        start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
-        end: "bottom bottom",
-        scrub: 1,
-        // markers: true,
-    }
+        scale: 1,
+        translateY: 0,
+        // translateY: "0%",
+        rotateX: "0deg",
+        scrollTrigger: {
+            trigger: "#hero-section",
+            start: window.innerWidth > RESPONSIVE_WIDTH ? "top 95%" : "top 70%",
+            end: "bottom bottom",
+            scrub: 1,
+            // markers: true,
+        }
 
-})
+    })
+}
 
 const faqAccordion = document.querySelectorAll('.faq-accordion')
 
