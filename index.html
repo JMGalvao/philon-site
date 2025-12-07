@@ -52,9 +52,10 @@
                     class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
                 >
                     <a
-                        href=""
+                        href="#"
                         aria-label="signup"
                         class="tw-rounded-full tw-bg-white tw-px-3 tw-py-2 tw-text-black tw-transition-transform tw-duration-[0.3s] hover:tw-translate-x-2"
+                        data-open-form="lead"
                     >
                         <span>Get started</span>
                         <i class="bi bi-arrow-right"></i>
@@ -95,7 +96,8 @@
                     >
                         <a
                             class="btn tw-bg-[#7e22ce85] tw-shadow-lg tw-shadow-primary tw-transition-transform tw-duration-[0.3s] hover:tw-scale-x-[1.03]"
-                            href=""
+                            href="#"
+                            data-open-form="lead"
                         >
                             Get started
                         </a>
@@ -350,12 +352,13 @@
                     United States
                 </div>
                 <div class="tw-mt-3 tw-text-lg tw-font-semibold">Follow us</div>
-                <div class="tw-flex tw-gap-4 tw-text-2xl">
-                    <a href="" aria-label="Facebook">
-                        <i class="bi bi-facebook"></i>
-                    </a>
                     <a
-                        href="https://twitter.com/@pauls_freeman"
+                        href="#"
+                        class="btn !tw-rounded-full !tw-border-[1px] !tw-border-solid !tw-border-gray-300 !tw-bg-transparent tw-transition-colors tw-duration-[0.3s]"
+                        data-open-form="lead"
+                    >
+                        Contact
+                    </a>
                         aria-label="Twitter"
                     >
                         <i class="bi bi-twitter"></i>
@@ -393,6 +396,27 @@
             </div>
         </footer>
     </body>
+
+    <!-- Floating modal form -->
+    <div id="modal-backdrop" class="tw-hidden modal-backdrop">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button id="modal-close" class="modal-close" aria-label="Close form">&times;</button>
+            <h3 id="modal-title" class="tw-text-2xl tw-font-semibold tw-mb-3">Let's talk about your project</h3>
+            <form id="lead-form" class="lead-form">
+                <div class="tw-flex tw-flex-col tw-gap-3">
+                    <input name="name" class="input" placeholder="Name" required />
+                    <input name="company" class="input" placeholder="Company" />
+                    <input name="email" type="email" class="input" placeholder="Email" required />
+                    <input name="contact" class="input" placeholder="Contact (phone)" />
+                    <textarea name="message" class="input" placeholder="Tell us about your project" rows="4"></textarea>
+                    <div class="tw-flex tw-justify-end tw-gap-3">
+                        <button type="button" id="modal-cancel" class="btn !tw-bg-transparent !tw-text-white !tw-border-[1px] !tw-border-solid !tw-border-gray-400">Cancel</button>
+                        <button type="submit" class="btn">Send</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
