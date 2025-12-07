@@ -1,17 +1,25 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  prefix: "tw-",
-  important: false,
-  content: ["**/*.{html, jsx, js}", "**/*.js", "**/*.html"],
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        primary: "#FF6600",
-        secondary: "#080808",
-        outlineColor: "#1F2123",
-      },
-    },
-  },
-  plugins: [],
-};
+	prefix: 'tw-',
+	important: false,
+	content: [
+		"**/*.{html, jsx, js}",
+		"**/*.js",
+		"**/*.html",
+	],
+	darkMode: 'class',
+	theme: {
+		extend: {
+			 
+			fontFamily: {
+				poly: ['"poly"', "serif"],
+			},
+		},
+	},
+	plugins: [
+		function({ addVariant }) {
+			addVariant('firefox', ':-moz-any(&)')
+		}
+	],
+}
+
