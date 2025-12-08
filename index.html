@@ -82,7 +82,7 @@
           <a class="header-links" href="#"> Home </a>
           <a class="header-links" href="#"> About </a>
           <a class="header-links" href="#"> Services </a>
-          <a class="header-links" href="#"> Contact </a>
+          <a class="header-links" href="#contact"> Contact </a>
 
           <div class="tw-relative tw-flex tw-flex-col tw-place-items-center">
                 <div id="nav-dropdown-toggle-0" class="max-lg:tw-max-w-fit tw-flex header-links tw-gap-1  tw-place-items-center">
@@ -1742,6 +1742,42 @@
         </div>
       </div>
     </section>-->
+
+    <section class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-2" id="contact">
+        <div class="tw-flex tw-w-full tw-max-w-[800px] tw-flex-col tw-gap-8">
+            <div class="tw-flex tw-flex-col tw-gap-2 tw-text-center">
+                <h2 class="tw-text-4xl tw-font-semibold tw-text-gray-800 dark:tw-text-white">Contact Us</h2>
+                <p class="tw-text-gray-600 dark:tw-text-gray-300">Have a question or want to work together? Drop us a line!</p>
+            </div>
+
+            <form class="tw-flex tw-flex-col tw-gap-6 tw-w-full tw-bg-white dark:tw-bg-[#171717] tw-p-8 tw-rounded-xl tw-shadow-lg dark:tw-shadow-none tw-border-[1px] tw-border-gray-200 dark:tw-border-[#36393c]">
+                <div class="tw-grid tw-grid-cols-2 tw-gap-6 max-md:tw-grid-cols-1">
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <label for="name" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Name</label>
+                        <input type="text" id="name" name="name" class="tw-w-full tw-rounded-lg tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-3 tw-outline-none focus:tw-border-black dark:focus:tw-border-white tw-transition-colors" placeholder="John Doe" required>
+                    </div>
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <label for="email" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Email</label>
+                        <input type="email" id="email" name="email" class="tw-w-full tw-rounded-lg tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-3 tw-outline-none focus:tw-border-black dark:focus:tw-border-white tw-transition-colors" placeholder="john@example.com" required>
+                    </div>
+                </div>
+
+                <div class="tw-flex tw-flex-col tw-gap-2">
+                    <label for="subject" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Subject</label>
+                    <input type="text" id="subject" name="subject" class="tw-w-full tw-rounded-lg tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-3 tw-outline-none focus:tw-border-black dark:focus:tw-border-white tw-transition-colors" placeholder="How can we help?" required>
+                </div>
+
+                <div class="tw-flex tw-flex-col tw-gap-2">
+                    <label for="message" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Message</label>
+                    <textarea id="message" name="message" rows="4" class="tw-w-full tw-rounded-lg tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-3 tw-outline-none focus:tw-border-black dark:focus:tw-border-white tw-transition-colors" placeholder="Your message..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn tw-w-full tw-justify-center tw-font-medium hover:tw-opacity-90 tw-transition-opacity">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
 
     <footer
       class="tw-mt-auto tw-flex tw-flex-col tw-w-full tw-gap-4 tw-text-sm tw-pt-[5%] tw-pb-10 tw-px-[10%] tw-text-black dark:tw-text-white max-md:tw-flex-col"
