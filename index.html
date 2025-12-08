@@ -1745,58 +1745,37 @@
 
     <section class="tw-flex tw-w-full tw-flex-col tw-place-content-center tw-place-items-center tw-gap-[10%] tw-p-[5%] tw-px-[10%] max-md:tw-px-2" id="contact">
         <div class="tw-flex tw-w-full tw-max-w-[800px] tw-flex-col tw-gap-8">
-            
             <div class="tw-flex tw-flex-col tw-gap-2 tw-text-center">
-                <h2 class="tw-text-4xl tw-font-semibold tw-text-gray-800 dark:tw-text-white">
-                    Let's Architect Your <span class="tw-text-[#ff8c42]">Future</span>
-                </h2>
-                <p class="tw-text-gray-600 dark:tw-text-gray-300 tw-text-lg">
-                    Ready to optimize your infrastructure? Connect with our senior systems architects.
-                </p>
+                <h2 class="tw-text-4xl tw-font-semibold tw-text-gray-800 dark:tw-text-white">Contact Us</h2>
+                <p class="tw-text-gray-600 dark:tw-text-gray-300">Have a question or want to work together? Drop us a line!</p>
             </div>
 
-            <form class="tw-flex tw-flex-col tw-gap-6 tw-w-full tw-bg-white dark:tw-bg-[#171717] tw-p-10 max-md:tw-p-6 tw-rounded-2xl tw-shadow-2xl dark:tw-shadow-none tw-border-[1px] tw-border-gray-200 dark:tw-border-[#36393c]">
-                
+            <form class="tw-flex tw-flex-col tw-gap-6 tw-w-full tw-bg-white dark:tw-bg-[#171717] tw-p-8 tw-rounded-xl tw-shadow-lg dark:tw-shadow-none tw-border-[1px] tw-border-gray-200 dark:tw-border-[#36393c]">
                 <div class="tw-grid tw-grid-cols-2 tw-gap-6 max-md:tw-grid-cols-1">
                     <div class="tw-flex tw-flex-col tw-gap-2">
-                        <label for="name" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Full Name</label>
-                        <input type="text" id="name" name="name" class="tw-w-full tw-rounded-xl tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-4 tw-outline-none focus:tw-border-[#ff8c42] focus:tw-ring-1 focus:tw-ring-[#ff8c42] dark:focus:tw-border-[#ff8c42] tw-transition-all" placeholder="John Doe" required>
+                        <label for="name" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Name</label>
+                        <input type="text" id="name" name="name" class="tw-w-full tw-rounded-lg tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-3 tw-outline-none focus:tw-border-black dark:focus:tw-border-white tw-transition-colors" placeholder="John Doe" required>
                     </div>
                     <div class="tw-flex tw-flex-col tw-gap-2">
-                        <label for="email" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Work Email</label>
-                        <input type="email" id="email" name="email" class="tw-w-full tw-rounded-xl tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-4 tw-outline-none focus:tw-border-[#ff8c42] focus:tw-ring-1 focus:tw-ring-[#ff8c42] dark:focus:tw-border-[#ff8c42] tw-transition-all" placeholder="john@company.com" required>
+                        <label for="email" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Email</label>
+                        <input type="email" id="email" name="email" class="tw-w-full tw-rounded-lg tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-3 tw-outline-none focus:tw-border-black dark:focus:tw-border-white tw-transition-colors" placeholder="john@example.com" required>
                     </div>
                 </div>
 
                 <div class="tw-flex tw-flex-col tw-gap-2">
-                    <label for="interest" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Project Type</label>
-                    <div class="tw-relative">
-                        <select id="interest" name="interest" class="tw-w-full tw-appearance-none tw-rounded-xl tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-4 tw-outline-none focus:tw-border-[#ff8c42] focus:tw-ring-1 focus:tw-ring-[#ff8c42] dark:focus:tw-border-[#ff8c42] tw-transition-all tw-cursor-pointer">
-                            <option>Enterprise Systems Design</option>
-                            <option>Technical Audit & Review</option>
-                            <option>Legacy Migration</option>
-                            <option>Intelligent Automation</option>
-                            <option>Other / General Inquiry</option>
-                        </select>
-                        <i class="bi bi-chevron-down tw-absolute tw-right-4 tw-top-1/2 tw--translate-y-1/2 tw-text-gray-500 tw-pointer-events-none"></i>
-                    </div>
+                    <label for="subject" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Subject</label>
+                    <input type="text" id="subject" name="subject" class="tw-w-full tw-rounded-lg tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-3 tw-outline-none focus:tw-border-black dark:focus:tw-border-white tw-transition-colors" placeholder="How can we help?" required>
                 </div>
 
                 <div class="tw-flex tw-flex-col tw-gap-2">
-                    <label for="message" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Technical Scope</label>
-                    <textarea id="message" name="message" rows="4" class="tw-w-full tw-rounded-xl tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-4 tw-outline-none focus:tw-border-[#ff8c42] focus:tw-ring-1 focus:tw-ring-[#ff8c42] dark:focus:tw-border-[#ff8c42] tw-transition-all" placeholder="Briefly describe your current stack and infrastructure challenges..." required></textarea>
+                    <label for="message" class="tw-text-sm tw-font-medium tw-text-gray-700 dark:tw-text-gray-300">Message</label>
+                    <textarea id="message" name="message" rows="4" class="tw-w-full tw-rounded-lg tw-border-[1px] tw-border-gray-300 dark:tw-border-gray-600 tw-bg-transparent tw-p-3 tw-outline-none focus:tw-border-black dark:focus:tw-border-white tw-transition-colors" placeholder="Your message..." required></textarea>
                 </div>
 
-                <button type="submit" class="tw-mt-2 tw-w-full tw-p-4 tw-rounded-xl tw-bg-[#ff8c42] hover:tw-bg-[#e07b3a] tw-text-white tw-font-bold tw-tracking-wide tw-transition-all active:tw-scale-[0.98] tw-flex tw-justify-center tw-items-center tw-gap-2 tw-shadow-lg tw-shadow-orange-500/20">
-                    <span>Submit Inquiry</span>
-                    <i class="bi bi-arrow-right"></i>
+                <button type="submit" class="btn tw-w-full tw-justify-center tw-font-medium hover:tw-opacity-90 tw-transition-opacity !tw-bg-[#ff8c42] !tw-text-white hover:!tw-bg-[#e07b3a]">
+                    Send Message
                 </button>
-                
             </form>
-            
-            <p class="tw-text-center tw-text-sm tw-text-gray-400">
-                NDA available upon request before initial discovery.
-            </p>
         </div>
     </section>
 
