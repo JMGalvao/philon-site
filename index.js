@@ -105,6 +105,72 @@ function updateToggleModeBtn(){
 
 }
 
+/** Language Toggle */
+// Initialize language from localStorage or default to 'en'
+let currentLanguage = localStorage.getItem('language') || 'en'
+
+// Apply saved language on page load
+if (currentLanguage) {
+    applyLanguage(currentLanguage)
+}
+
+function toggleLanguage() {
+    // Toggle between 'en' and another language (e.g., 'pt' for Portuguese)
+    currentLanguage = currentLanguage === 'en' ? 'pt' : 'en'
+    applyLanguage(currentLanguage)
+    localStorage.setItem('language', currentLanguage)
+}
+
+function applyLanguage(lang) {
+    const languageIcon = document.querySelector("#language-icon")
+    
+    if (lang === 'en') {
+        languageIcon.textContent = 'EN'
+        // Apply English translations
+        updateContent('en')
+    } else {
+        languageIcon.textContent = 'PT'
+        // Apply Portuguese translations (or any other language)
+        updateContent('pt')
+    }
+}
+
+function updateContent(lang) {
+    // Define your translations here
+    const translations = {
+        en: {
+            // Add your English text keys here
+            bookMeeting: 'Book Meeting',
+            home: 'Home',
+            about: 'About',
+            services: 'Services',
+            contact: 'Contact',
+            // Add more translations as needed
+        },
+        pt: {
+            // Add your Portuguese text keys here
+            bookMeeting: 'Agendar Reunião',
+            home: 'Início',
+            about: 'Sobre',
+            services: 'Serviços',
+            contact: 'Contato',
+            // Add more translations as needed
+        }
+    }
+    
+    // Update text content based on language
+    // Example: document.querySelector('[data-i18n="bookMeeting"]').textContent = translations[lang].bookMeeting
+    
+    // You can add data-i18n attributes to your HTML elements and update them here
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n')
+        if (translations[lang][key]) {
+            element.textContent = translations[lang][key]
+        }
+    })
+}
+// end language toggle
+
 
 const promptContainer = document.querySelector("#philon-playground")
 const promptForm = document.querySelector("#prompt-form")
