@@ -2,16 +2,18 @@
   RewriteEngine On
   RewriteBase /
 
+  # Remove trailing slashes
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # Rewrite /pt to /pt/index.html
+  RewriteRule ^pt$ pt/index.html [L]
+
+  # Rewrite /en to /en/index.html
+  RewriteRule ^en$ en/index.html [L]
+
   # Remove .html extension
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^([^.]+)$ $1.html [L]
-
-  # Rewrite /pt to /pt/index.html
-  RewriteCond %{REQUEST_URI} ^/pt/?$
-  RewriteRule ^pt/?$ pt/index.html [L]
-
-  # Rewrite /en to /en/index.html
-  RewriteCond %{REQUEST_URI} ^/en/?$
-  RewriteRule ^en/?$ en/index.html [L]
 </IfModule>
