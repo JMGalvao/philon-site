@@ -106,68 +106,47 @@ function updateToggleModeBtn(){
 }
 
 /** Language Toggle */
-// Initialize language from localStorage or default to 'en'
-let currentLanguage = localStorage.getItem('language') || 'en'
+// Get current language from URL path or default to 'pt'
+function getCurrentLanguageFromPath() {
+    const path = window.location.pathname
+    if (path.includes('/en/')) {
+        return 'en'
+    } else if (path.includes('/pt/')) {
+        return 'pt'
+    }
+    return 'pt' // Default to Portuguese
+}
 
-// Apply saved language on page load
-if (currentLanguage) {
-    applyLanguage(currentLanguage)
+let currentLanguage = getCurrentLanguageFromPath()
+
+// Update language button icon on page load
+const languageIcon = document.querySelector("#language-icon")
+if (languageIcon) {
+    languageIcon.textContent = currentLanguage === 'en' ? 'EN' : 'PT'
 }
 
 function toggleLanguage() {
-    // Toggle between 'en' and another language (e.g., 'pt' for Portuguese)
-    currentLanguage = currentLanguage === 'en' ? 'pt' : 'en'
-    applyLanguage(currentLanguage)
-    localStorage.setItem('language', currentLanguage)
-}
-
-function applyLanguage(lang) {
-    const languageIcon = document.querySelector("#language-icon")
+    // Toggle between /en/ and /pt/ folders
+    const newLanguage = currentLanguage === 'en' ? 'pt' : 'en'
+    const currentPath = window.location.pathname
+    let newPath
     
-    if (lang === 'en') {
-        languageIcon.textContent = 'EN'
-        // Apply English translations
-        updateContent('en')
+    // Replace language folder in path
+    if (currentPath.includes('/en/')) {
+        newPath = currentPath.replace('/en/', '/pt/')
+    } else if (currentPath.includes('/pt/')) {
+        newPath = currentPath.replace('/pt/', '/en/')
     } else {
-        languageIcon.textContent = 'PT'
-        // Apply Portuguese translations (or any other language)
-        updateContent('pt')
-    }
-}
-
-function updateContent(lang) {
-    // Define your translations here
-    const translations = {
-        en: {
-            // Add your English text keys here
-            bookMeeting: 'Book Meeting',
-            home: 'Home',
-            about: 'About',
-            services: 'Services',
-            contact: 'Contact',
-            // Add more translations as needed
-        },
-        pt: {
-            // Add your Portuguese text keys here
-            bookMeeting: 'Agendar Reunião',
-            home: 'Início',
-            about: 'Sobre',
-            services: 'Serviços',
-            contact: 'Contato',
-            // Add more translations as needed
+        // If at root or no language folder, redirect to the appropriate language folder
+        if (currentPath === '/' || currentPath === '/index.html') {
+            newPath = '/' + newLanguage + '/index.html'
+        } else {
+            newPath = '/' + newLanguage + currentPath
         }
     }
     
-    // Update text content based on language
-    // Example: document.querySelector('[data-i18n="bookMeeting"]').textContent = translations[lang].bookMeeting
-    
-    // You can add data-i18n attributes to your HTML elements and update them here
-    document.querySelectorAll('[data-i18n]').forEach(element => {
-        const key = element.getAttribute('data-i18n')
-        if (translations[lang][key]) {
-            element.textContent = translations[lang][key]
-        }
-    })
+    // Redirect to new language URL
+    window.location.href = newPath
 }
 // end language toggle
 
