@@ -109,9 +109,9 @@ function updateToggleModeBtn(){
 // Get current language from URL path or default to 'pt'
 function getCurrentLanguageFromPath() {
     const path = window.location.pathname
-    if (path.includes('/en/')) {
+    if (path.startsWith('/en')) {
         return 'en'
-    } else if (path.includes('/pt/')) {
+    } else if (path.startsWith('/pt')) {
         return 'pt'
     }
     return 'pt' // Default to Portuguese
@@ -126,27 +126,11 @@ if (languageIcon) {
 }
 
 function toggleLanguage() {
-    // Toggle between /en/ and /pt/ folders
+    // Toggle between /en and /pt
     const newLanguage = currentLanguage === 'en' ? 'pt' : 'en'
-    const currentPath = window.location.pathname
-    let newPath
     
-    // Replace language folder in path
-    if (currentPath.includes('/en/')) {
-        newPath = currentPath.replace('/en/', '/pt/')
-    } else if (currentPath.includes('/pt/')) {
-        newPath = currentPath.replace('/pt/', '/en/')
-    } else {
-        // If at root or no language folder, redirect to the appropriate language folder
-        if (currentPath === '/' || currentPath === '/index.html') {
-            newPath = '/' + newLanguage + '/index.html'
-        } else {
-            newPath = '/' + newLanguage + currentPath
-        }
-    }
-    
-    // Redirect to new language URL
-    window.location.href = newPath
+    // Always redirect to the language root
+    window.location.href = '/' + newLanguage
 }
 // end language toggle
 
