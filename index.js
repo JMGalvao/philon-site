@@ -129,24 +129,8 @@ function toggleLanguage() {
     // Toggle between /en and /pt
     const newLanguage = currentLanguage === 'en' ? 'pt' : 'en'
     
-    // Get the current path and remove the language prefix
-    const path = window.location.pathname
-    let remainingPath = ''
-    
-    // Remove /en or /pt from the beginning of the path
-    if (path.startsWith('/en/')) {
-        remainingPath = path.substring(3)
-    } else if (path.startsWith('/pt/')) {
-        remainingPath = path.substring(3)
-    } else if (path === '/en' || path === '/pt') {
-        remainingPath = ''
-    } else {
-        remainingPath = path
-    }
-    
-    // Redirect to the new language with the remaining path
-    const newPath = remainingPath ? '/' + newLanguage + '/' + remainingPath : '/' + newLanguage
-    window.location.href = newPath
+    // Always redirect to the language root
+    window.location.href = '/' + newLanguage
 }
 // end language toggle
 
