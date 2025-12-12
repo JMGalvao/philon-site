@@ -63,7 +63,7 @@
     <header
       class="lg:tw-px-4 tw-max-w-[100vw] tw-max-w-lg:tw-mr-auto max-lg:tw-top-0 tw-fixed tw-top-4 lg:tw-left-1/2 lg:tw--translate-x-1/2 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-text-gray-700 tw-bg-white dark:tw-text-gray-200 dark:tw-bg-[#17181b] tw-px-[3%] tw-rounded-md lg:tw-max-w-5xl tw-shadow-md dark:tw-shadow-orange lg:tw-justify-around lg:!tw-backdrop-blur-lg lg:tw-opacity-[0.99]"
     >
-      <a class="tw-flex tw-p-[4px] tw-gap-2 tw-place-items-center" href="#">
+      <a class="tw-flex tw-p-[4px] tw-gap-2 tw-place-items-center" href="index.html">
         <div class="tw-h-[124px] tw-max-w-[220px]" style="height:124px;">
           <img
             src="/assets/logo/logo.svg?v=2"
@@ -81,12 +81,12 @@
         <nav
           class="tw-relative tw-flex tw-h-full max-lg:tw-h-max tw-w-max tw-gap-5 tw-text-base max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-gap-5 lg:tw-mx-auto tw-place-items-center"
         >
-          <a class="header-links" href="#"> Home </a>
-          <a class="header-links" href="#about"> About </a>
+          <a class="header-links" href="index.html"> Home </a>
+          <a class="header-links" href="index.html#about"> About </a>
 
           <div class="tw-relative tw-flex tw-flex-col tw-place-items-center">
                 <div id="nav-dropdown-toggle-0" class="max-lg:tw-max-w-fit tw-flex header-links tw-gap-1  tw-place-items-center">
-                    <span class=""> Services </span>
+                    <span href="services.html" class=""> Services </span>
                     <i class="tw-text-sm bi bi-chevron-down"></i>
                 </div>
                 <nav id="nav-dropdown-list-0" 
@@ -98,7 +98,7 @@
                                 tw-transition-opacity tw-transition-height tw-shadow-lg tw-p-4">
                     <div class="tw-grid max-xl:tw-flex max-xl:tw-flex-col tw-justify-around tw-grid-cols-2 tw-w-full">
 
-                        <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#services">
+                        <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="services.html#ai-chatbots">
                             <div class="tw-font-semibold tw-text-3xl">
                                 <i class="bi bi-grid-1x2-fill"></i>
                             </div>
@@ -108,7 +108,7 @@
                             </div> 
                         </a>
 
-                        <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#services">
+                        <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="services.html#hosting">
                             <div class="tw-font-semibold tw-text-3xl">
                                 <i class="bi bi-globe"></i>
                             </div>
@@ -118,7 +118,7 @@
                             </div> 
                         </a>
 
-                        <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#services">
+                        <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="services.html#development">
                             <div class="tw-font-semibold tw-text-3xl">
                                 <i class="bi bi-image-fill"></i>
                             </div>
@@ -130,7 +130,7 @@
                             </div> 
                         </a>
 
-                        <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="#services">
+                        <a class="header-links tw-flex tw-text-left tw-gap-4 !tw-p-4" href="services.html#automation">
                             <div class="tw-font-semibold tw-text-3xl">
                                 <i class="bi bi-gear-wide-connected"></i>
                             </div>
@@ -142,7 +142,7 @@
                     </div>
                 </nav>
             </div>
-            <a class="header-links" href="#contact"> Contact </a>
+            <a class="header-links" href="index.html#contact"> Contact </a>
           </nav>
         <div
           class="lg:tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
@@ -163,10 +163,10 @@
             title="toggle-language"
             id="language-toggle"
           >
-            <span id="language-icon">PT</span>
+            <span id="language-icon">EN</span>
           </button>
           <a
-            href="#contact"
+            href="index.html#contact"
             aria-label="Book a meeting with us"
             class="btn tw-flex tw-gap-3 tw-px-3 tw-py-2 tw-transition-transform tw-duration-[0.3s] hover:tw-translate-x-2 !tw-bg-[#ff8c42] !tw-text-white hover:!tw-bg-[#e07b3a]"
           >
@@ -372,10 +372,9 @@
             <div
             class="reveal-up tw-w-[350px] tw-h-[540px] tw-flex max-md:tw-w-full"
             >
-                <a
-                    
-                    class="tw-relative tw-p-10 tw-transition-all tw-duration-300 tw-group/card tw-gap-5 tw-flex tw-flex-col tw-w-full tw-h-full tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-rounded-3xl hover:tw-scale-[1.02]"
-                >
+              <div
+                class="tw-relative tw-p-10 tw-transition-all tw-duration-300 tw-group/card tw-gap-5 tw-flex tw-flex-col tw-w-full tw-h-full tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-rounded-3xl hover:tw-scale-[1.02]"
+              >
                     <div
                     class="tw-overflow-hidden tw-w-full tw-min-h-[180px] tw-h-[180px] tw-flex tw-place-content-center tw-place-items-center"
                     >
@@ -389,16 +388,20 @@
                     >
                     We create Landing Pages, E-commerce stores, and Backoffices. We build sites that look great and convert visitors into customers.
                     </p>
-                </a>
+                    <div class="tw-flex tw-justify-start tw-mt-4">
+                      <a href="/en/services.html#development" class="btn tw-px-4 tw-py-2 tw-rounded-md tw-bg-[#ff8c42] tw-text-white tw-font-medium hover:tw-bg-[#e07b3a] tw-transition-colors">
+                        View service
+                      </a>
+                    </div>
+                  </div>
             </div>
 
             <div
             class="reveal-up tw-w-[350px] tw-h-[540px] tw-flex max-md:tw-w-full"
             >
-            <a
-                
-                class="tw-relative tw-p-10 tw-transition-all tw-duration-300 tw-group/card tw-gap-5 tw-flex tw-flex-col tw-w-full tw-h-full tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-rounded-3xl hover:tw-scale-[1.02]"
-            >
+                <div
+                  class="tw-relative tw-p-10 tw-transition-all tw-duration-300 tw-group/card tw-gap-5 tw-flex tw-flex-col tw-w-full tw-h-full tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-rounded-3xl hover:tw-scale-[1.02]"
+                >
                 <div
                 class="tw-w-full tw-min-h-[180px] tw-h-[180px] tw-overflow-hidden tw-flex tw-place-content-center tw-place-items-center"
                 >
@@ -410,16 +413,20 @@
                 <p class="tw-leading-normal tw-text-gray-800 dark:tw-text-gray-200">
                 Custom trained chatbots integrated into your website. Automate customer support, answer FAQs instantly, and take bookings automatically.
                 </p>
-            </a>
+                <div class="tw-flex tw-justify-start tw-mt-4">
+                  <a href="/en/services.html#ai-chatbots" class="btn tw-px-4 tw-py-2 tw-rounded-md tw-bg-[#ff8c42] tw-text-white tw-font-medium hover:tw-bg-[#e07b3a] tw-transition-colors">
+                    View service
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div
             class="reveal-up tw-w-[350px] tw-h-[540px] tw-flex max-md:tw-w-full"
             >
-            <a
-                
+              <div
                 class="tw-relative tw-p-10 tw-transition-all tw-duration-300 tw-group/card tw-gap-5 tw-flex tw-flex-col tw-w-full tw-h-full tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-rounded-3xl hover:tw-scale-[1.02]"
-            >
+              >
                 <div
                 class="tw-w-full tw-flex tw-place-content-center tw-place-items-center tw-min-h-[180px] tw-h-[180px] tw-rounded-xl tw-overflow-hidden"
                 >
@@ -431,14 +438,19 @@
                 <p class="tw-leading-normal tw-text-gray-800 dark:tw-text-gray-200">
                 Don't worry about servers or downtime. We provide full infrastructure management for your site or any specific service you need hosted.
                 </p>
-            </a>
+                <div class="tw-flex tw-justify-start tw-mt-4">
+                  <a href="/en/services.html#hosting" class="btn tw-px-4 tw-py-2 tw-rounded-md tw-bg-[#ff8c42] tw-text-white tw-font-medium hover:tw-bg-[#e07b3a] tw-transition-colors">
+                    View service
+                  </a>
+                </div>
+              </div>
             </div>
         </div>
 
         <div
             class="reveal-up tw-w-full md:tw-h-[350px] max-md:tw-min-h-[350px] tw-flex"
         >
-            <a
+            <div
             
             class="tw-relative tw-p-10 tw-transition-all tw-duration-300 tw-group/card tw-gap-5 tw-flex max-md:tw-flex-col tw-w-full tw-h-full tw-bg-[#f6f7fb] dark:tw-bg-[#171717] tw-rounded-3xl hover:tw-scale-[1.02]"
             >
@@ -448,16 +460,21 @@
                     <i class="bi bi-gear-wide-connected tw-text-[#ff8c42]" style="font-size: 10rem;"></i>
                 </div>
                 <div class="tw-flex tw-flex-col tw-gap-4 tw-justify-center">
-                    <h2 class="tw-text-3xl max-md:tw-text-2xl tw-font-medium">
-                    IT & AI Automation
-                    </h2>
-                    <p
-                    class="tw-leading-normal tw-text-gray-800 dark:tw-text-gray-200"
-                    >
-                    Stop doing manual data entry. We create custom automation workflows to connect your apps, organize your data, and save you hours of work every week. <strong>Book a free consultation today.</strong>
-                    </p>
+                  <h2 class="tw-text-3xl max-md:tw-text-2xl tw-font-medium">
+                  IT & AI Automation
+                  </h2>
+                  <p
+                  class="tw-leading-normal tw-text-gray-800 dark:tw-text-gray-200"
+                  >
+                  Stop doing manual data entry. We create custom automation workflows to connect your apps, organize your data, and save you hours of work every week. <strong>Book a free consultation today.</strong>
+                  </p>
+                  <div class="tw-flex tw-justify-start tw-mt-4">
+                    <a href="/en/services.html#automation" class="btn tw-px-4 tw-py-2 tw-rounded-md tw-bg-[#ff8c42] tw-text-white tw-font-medium hover:tw-bg-[#e07b3a] tw-transition-colors">
+                      View service
+                    </a>
+                  </div>
                 </div>
-            </a>
+              </div>
         </div>
     </section>
 
@@ -858,7 +875,7 @@
           class="tw-flex tw-h-full tw-w-[250px] tw-flex-col tw-place-items-center tw-gap-6 max-md:tw-w-full"
         >
           <a
-            
+            href="index.html"
             class="tw-w-full tw-place-items-center tw-flex tw-flex-col tw-gap-6"
           >
             <img

@@ -125,12 +125,38 @@ if (languageIcon) {
     languageIcon.textContent = currentLanguage === 'en' ? 'EN' : 'PT'
 }
 
+// Map current path to the equivalent page in the target language, preserving anchors
+function mapPathToLanguage(targetLanguage) {
+    const currentPath = window.location.pathname
+    const hash = window.location.hash || ''
+
+    // Drop trailing slash (except root)
+    const normalize = (path) => {
+        if (path !== '/' && path.endsWith('/')) return path.slice(0, -1)
+        return path || '/'
+    }
+
+    const path = normalize(currentPath)
+
+    if (targetLanguage === 'en') {
+        if (path === '/pt/servicos') return '/en/services' + hash
+        if (path === '/pt') return '/en' + hash
+        if (path.startsWith('/pt/')) return '/en' + path.slice(3) + hash
+        if (path === '/') return '/en' + hash
+        return '/en' + hash
+    }
+
+    // targetLanguage === 'pt'
+    if (path === '/en/services') return '/pt/servicos' + hash
+    if (path === '/en') return '/pt' + hash
+    if (path.startsWith('/en/')) return '/pt' + path.slice(3) + hash
+    if (path === '/') return '/pt' + hash
+    return '/pt' + hash
+}
+
 function toggleLanguage() {
-    // Toggle between /en and /pt
     const newLanguage = currentLanguage === 'en' ? 'pt' : 'en'
-    
-    // Always redirect to the language root
-    window.location.href = '/' + newLanguage
+    window.location.href = mapPathToLanguage(newLanguage)
 }
 // end language toggle
 
