@@ -14,4 +14,12 @@
   # Rewrite /en to /en/index.html
   RewriteCond %{REQUEST_URI} ^/en/?$
   RewriteRule ^en/?$ en/index.html [L]
+
+  # Rewrite /pt to /pt/index.html
+  RewriteCond %{REQUEST_URI} ^/pt/?$
+  RewriteRule ^pt/servicos?$ pt/services.html [L]
+
+  # Rewrite /en to /en/index.html
+  RewriteCond %{REQUEST_URI} ^/en/?$
+  RewriteRule ^en/services?$ en/services.html [L]
 </IfModule>
